@@ -16,7 +16,7 @@
  */
 public class CourseReading {
   // fields
-  private Integer ISBN;
+  private String ISBN;
   private String bookTitle;
   private String course;
 
@@ -33,14 +33,14 @@ public class CourseReading {
   /**
    * @return the ISBN
    */
-  public int getISBN() {
+  public String getISBN() {
     return ISBN;
   }
 
   /**
    * @param ISBN
    */
-  public void setISBN(Integer ISBN) {
+  public void setISBN(String ISBN) {
     this.ISBN = ISBN;
   }
 
