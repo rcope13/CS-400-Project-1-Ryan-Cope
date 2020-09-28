@@ -1,3 +1,4 @@
+import java.nio.file.NoSuchFileException;
 import java.util.Scanner;
 
 public class FrontEnd {
@@ -20,8 +21,12 @@ public class FrontEnd {
 				command = scnr.nextLine().toLowerCase().trim();
 			}
 			if(command.equals("d")) {
-				genericHashTable = Wrangle.readCSV("src/textbook_file.txt");
-				pickedDatabase = true;
+				genericHashTable = Wrangle.readCSV("src/textbook_file.csv");
+				if(genericHashTable != null) {
+					pickedDatabase = true;
+				}
+				System.out.println("Something went wrong. Try another command.");
+				command = scnr.nextLine().toLowerCase().trim();
 			}
 			if(command.equals("n")) {
 				genericHashTable = new HashTableMap<String, CourseReading>();
