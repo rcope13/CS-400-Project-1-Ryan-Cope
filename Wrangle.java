@@ -42,7 +42,7 @@ public class Wrangle {
    * @author I modeled the following implementation from
    *         https://attacomsian.com/blog/read-write-csv-files-core-java
    */
-  private static HashTableMap<String, CourseReading> readCSV(String filePath) {
+  public static HashTableMap<String, CourseReading> readCSV(String filePath) {
     HashTableMap<String, CourseReading> hashTable = new HashTableMap<String, CourseReading>(2000);
     try {
       // CSV file delimiter
