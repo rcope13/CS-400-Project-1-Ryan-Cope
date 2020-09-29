@@ -16,7 +16,7 @@ public class CourseReadingBackEnd {
   private HashTableMap<String, CourseReading> hashTable; //hashTable
   
   public CourseReadingBackEnd() {
-    this.hashTable = Wrangle.readCSV("src/textbook_file.csv");
+    this.hashTable = new HashTableMap<String, CourseReading>(2000);
   }
   
   /**Sets up a hashTable with all the courseReadings by using the Wrangle.readCSV class method
