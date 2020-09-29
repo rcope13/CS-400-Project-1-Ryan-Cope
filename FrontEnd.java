@@ -15,7 +15,6 @@ public class FrontEnd {
 		String command = null;
 		Scanner scnr = new Scanner(System.in);
 		String prompt = "Please input a command. To see the commands, type c.";
-//		HashTableMap<String, CourseReading> genericHashTable;
 		courseReadingBackEnd backEndData = null;
 
 		// this is where you decide to create a new database or use the default
@@ -25,19 +24,12 @@ public class FrontEnd {
 		boolean pickedDatabase = false;
 		while (pickedDatabase == false) {
 			if (command.equals("d")) {
-//				genericHashTable = Wrangle.readCSV("src/textbook_file.csv");
 				backEndData = new courseReadingBackEnd("src/textbook_file.csv");
 				if (backEndData != null) {
 					pickedDatabase = true;
 				}
-//				if (backEndData == null) {
-//					System.out.println("Something went wrong. Try another command.");
-//					command = scnr.nextLine().toLowerCase().trim();
-//				}
 			}
 			if (command.equals("n")) {
-//				genericHashTable = new HashTableMap<String, CourseReading>();
-//				backEndData = new courseReadingBackEnd();
 				pickedDatabase = true;
 			}
 			if ((!command.equals("n")) && (!command.equals("d"))) {
@@ -76,7 +68,6 @@ public class FrontEnd {
 				String inputTitle = scnr.nextLine().trim();
 				System.out.println("Please input a valid course name.");
 				String inputCourseName = scnr.nextLine().trim();
-//				System.out.println("run the insert(inputISBN, inputTitle, inputCourseName) command");
 				backEndData.put(inputISBN, inputTitle, inputCourseName);
 			}
 
@@ -85,7 +76,6 @@ public class FrontEnd {
 				System.out.println(
 						"You have chosen to remove a course. Please input a valid ISBN to check for the course.");
 				String inputISBN = scnr.nextLine().trim();
-//				System.out.println("run the remove(inputISBN) command");
 				backEndData.remove(inputISBN);
 			}
 
