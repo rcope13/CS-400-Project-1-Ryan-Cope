@@ -22,14 +22,16 @@ public class Wrangle {
   private static CourseReading readingToPass; // the object/value added to HashTableMap
 
   /**
+   * This method resets the readingToPass static variable and sets the now reset variable's isbn
+   * field
+   * 
    * @param isbn - the ISBN of the book to be added to CourseReading object which will in turn be
    *             the value of the key-value pair added to HashTableMap
-   * @return - true if valid ISBN, false if not TODO look into if it already exists in the table
    */
-  public static boolean setISBN(String isbn) {
+  public static void setISBN(String isbn) {
     resetReading();
     readingToPass.setISBN(isbn);
-    return true;
+    // return true;
   }
 
   /**
@@ -58,7 +60,6 @@ public class Wrangle {
       while (line != null) {
         // convert line into tokens
         String[] tokens = line.split(DELIMITER);
-
         Wrangle.setISBN(tokens[4]);
         Wrangle.setCourse("" + tokens[0] + " " + tokens[1] + " " + tokens[2]);
         Wrangle.setTitle(tokens[3]);
@@ -122,28 +123,22 @@ public class Wrangle {
     readingToPass = new CourseReading();
   }
 
-  // /**
-  // * I have included this method if you wish to see the functionality of Wrangle, CourseReading,
-  // and
-  // * your HashTableMap.
-  // */
-  // public static void main(String[] args) {
-  // HashTableMap<String, CourseReading> table = readCSV("src/textbook_file.csv");
-  // Wrangle.setISBN("898989899"); // in final product, the param would come from user input
-  // Wrangle.setTitle("Harry Potter"); // *see above comment*
-  // Wrangle.setCourse("English 345"); // *see above comment*
-  // table.put(Wrangle.key(), Wrangle.value()); // use staic methods to get the key and value passed
-  // Wrangle.setISBN("454545454"); // New CourseReading to add
-  // Wrangle.setTitle("LOTR");
-  // Wrangle.setCourse("English 745");
-  // table.put(Wrangle.key(), Wrangle.value());
-  // System.out.println(table.get("898989899").getBookTitle()); // should return "Harry Potter"
-  // System.out.println(table.get("454545454").getInfo()); // should return "LOTR" and info
-  // System.out.println(table.get("0393938579").getInfo()); // should return "The Norton Shak.." and
-  // // corresponding info
-  // System.out.println(table.get("0822240020").getInfo()); // should return "Kill Move Paradise"
-  // and
-  // // corresponding info
-  //
-  // }
+//  /**
+//   * I have included this method if you wish to see the functionality of Wrangle, CourseReading, and
+//   * your HashTableMap.
+//   */
+//  public static void main(String[] args) {
+//    HashTableMap<String, CourseReading> table = readCSV("src/updated_textbook_file.csv");
+//    Wrangle.setISBN("898989899"); // in final product, the param would come from user input
+//    Wrangle.setTitle("Harry Potter"); // *see above comment*
+//    Wrangle.setCourse("English 345"); // *see above comment*
+//    table.put(Wrangle.key(), Wrangle.value()); // use staic methods to get the key and value passed
+//    Wrangle.setISBN("454545454"); // New CourseReading to add
+//    Wrangle.setTitle("LOTR");
+//    Wrangle.setCourse("English 745");
+//    table.put(Wrangle.key(), Wrangle.value());
+//    System.out.println(table.get("898989899").getBookTitle()); // should return "Harry Potter"
+//    System.out.println(table.get("454545454").getInfo()); // should return "LOTR" and info
+//    System.out.println(table.get("'9783319266527'").getInfo()); // should return "Differn. Geometry"
+//  }
 }
